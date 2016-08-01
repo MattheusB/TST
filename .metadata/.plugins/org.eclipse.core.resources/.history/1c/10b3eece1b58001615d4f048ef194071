@@ -1,0 +1,39 @@
+
+public class Fila {
+	public static void main(String[] args) {
+
+	}
+
+	int tamanho;
+	int[] fila;
+	int inicio;
+	int fim;
+
+	public Fila(int tamanho) {
+		this.tamanho = tamanho;
+		this.fila = new int[tamanho];
+		this.inicio = -1;
+		this.fim = -1;
+	}
+
+	public boolean isEmpty() {
+		if (this.inicio == -1 && this.fim == -1) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean isFull() {
+		if (this.inicio == this.fim) {
+			return true;
+		}
+		return false;
+	}
+
+	public void add(int elemento) {
+		if (this.isFull()) {
+			throw new RunTimeException("Fila cheia");
+		}
+	}
+
+}

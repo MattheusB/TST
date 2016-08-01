@@ -1,0 +1,53 @@
+
+public class Fila {
+	public static void main(String[] args) {
+
+	}
+
+	int tamanho;
+	int[] fila;
+	int inicio;
+	int fim;
+
+	public Fila(int tamanho) {
+		this.tamanho = tamanho;
+		this.fila = new int[tamanho];
+		this.inicio = -1;
+		this.fim = -1;
+	}
+
+	public boolean isEmpty() {
+		if (this.inicio == -1 && this.fim == -1) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean isFull() {
+		if (this.inicio == this.fim) {
+			return true;
+		}
+		return false;
+	}
+
+	public void add(int elemento) {
+		if (isFull()) {
+			throw new RuntimeException("Fila cheia");
+		} else if (isEmpty()) {
+			this.inicio = 0;
+			this.fim = 0;
+			fila[fim] = elemento;
+		} else {
+			this.fim = (fim + 1) % this.tamanho;
+			this.fila[this.fim] = elemento;
+		}
+	}
+
+	public void remove() {
+		if (isEmpty()) {
+			throw new RuntimeException("Fila vazia");
+		}
+
+	}
+
+}

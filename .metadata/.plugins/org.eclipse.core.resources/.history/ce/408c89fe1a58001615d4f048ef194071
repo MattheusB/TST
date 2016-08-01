@@ -1,0 +1,19 @@
+
+public class Fila {
+	public static void main(String[] args) {
+
+	}
+
+	int tamanho;
+	int[] fila;
+	int inicio;
+	int fim;
+
+	public Fila(int tamanho) {
+		this.tamanho = tamanho;
+		this.fila = new int[tamanho];
+		this.inicio = -1;
+		this.fim = -1;
+	}
+
+}
